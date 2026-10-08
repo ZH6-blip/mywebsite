@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitegate Dairy Co. — Farm-fresh dairy, delivered</title>
+<meta name="description" content="Whitegate Dairy Co. sells farm-fresh milk, ghee, paneer, curd, butter and cheese, made daily from our own pasture herds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER / NAVIGATION ============ -->
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#2F5233"/>
+        <path d="M15 12h10a2 2 0 0 1 2 2v3c0 1-1 2-1 3.5v6a2 2 0 0 1-2 2H16a2 2 0 0 1-2-2v-6c0-1.5-1-2.5-1-3.5v-3a2 2 0 0 1 2-2Z" fill="#F4F7EF"/>
+        <rect x="14" y="19" width="12" height="3" fill="#E8A33D"/>
+      </svg>
+      <span class="brand-name">Whitegate&nbsp;Dairy&nbsp;Co.</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+
+  <button class="icon-btn" aria-label="Search products">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+  </button>
+
+  <a href="cart.html"
+     class="icon-btn cart-btn"
+     aria-label="View Cart">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.8h7.2a2 2 0 0 0 2-1.6L20 8H6"/>
+      <circle cx="9" cy="20" r="1.4"/>
+      <circle cx="17" cy="20" r="1.4"/>
+    </svg>
+
+    <span class="cart-count" id="cartCount">0</span>
+
+  </a>
+
+</div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="hero-kicker">Milked, made and packed before sunrise</p>
+      <h1>Dairy that still<br>tastes like the farm.</h1>
+      <p class="hero-sub">Whitegate Dairy Co. runs its own pasture herds outside Kadapa. Everything you buy today was on the farm yesterday — no distributors, no long cold-chains, no shortcuts.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">Shop today's batch</a>
+        <a href="#about" class="btn btn-ghost">Meet the herd</a>
+      </div>
+      <dl class="hero-stats">
+        <div><dt>34</dt><dd>years farming this land</dd></div>
+        <div><dt>6am</dt><dd>daily milking &amp; packing</dd></div>
+        <div><dt>0</dt><dd>added preservatives</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 460" class="pour-illustration">
+        <path d="M60 300 Q30 180 120 110 Q220 20 320 90 Q400 150 360 260 Q330 350 220 400 Q100 440 60 300Z" fill="#C7D6BC"/>
+        <ellipse cx="200" cy="392" rx="120" ry="26" fill="#E4DFCF"/>
+        <path d="M150 380 Q200 410 250 380 L242 300 Q200 314 158 300Z" fill="#FFFFFF" stroke="#2F5233" stroke-width="3"/>
+        <ellipse cx="200" cy="300" rx="42" ry="12" fill="#F4F7EF" stroke="#2F5233" stroke-width="3"/>
+        <rect x="168" y="120" width="64" height="150" rx="14" fill="#FFFFFF" stroke="#2F5233" stroke-width="3"/>
+        <path d="M182 120 L182 96 Q182 84 200 84 Q218 84 218 96 L218 120Z" fill="#FFFFFF" stroke="#2F5233" stroke-width="3"/>
+        <rect x="178" y="70" width="44" height="18" rx="4" fill="#2F5233"/>
+        <rect x="168" y="176" width="64" height="34" fill="#E8A33D"/>
+        <text x="200" y="198" text-anchor="middle" font-family="Zilla Slab, serif" font-weight="600" font-size="15" fill="#2F5233">W</text>
+        <path d="M214 122 Q248 150 240 190 Q234 220 224 234" fill="none" stroke="#F4F7EF" stroke-width="10" stroke-linecap="round"/>
+        <path d="M214 122 Q248 150 240 190 Q234 220 224 234" fill="none" stroke="#2F5233" stroke-width="2" stroke-dasharray="1 10" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="90" cy="120" r="7" fill="#E8A33D"/>
+        <circle cx="340" cy="230" r="10" fill="#E8A33D"/>
+        <circle cx="70" cy="230" r="5" fill="#2F5233"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<section class="trust-strip">
+  <div class="wrap trust-inner">
+    <div class="trust-item"><span class="trust-dot"></span>Collected fresh every morning</div>
+    <div class="trust-item"><span class="trust-dot"></span>Packed within hours, not days</div>
+    <div class="trust-item"><span class="trust-dot"></span>Delivered cold, every time</div>
+    <div class="trust-item"><span class="trust-dot"></span>Herd-to-doorstep, no middlemen</div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT HIGHLIGHTS ============ -->
+<section class="highlights" id="highlights">
+  <div class="wrap">
+    <h2 class="section-title">This week, we're proud of</h2>
+    <div class="highlight-grid">
+      <article class="highlight-card highlight-green">
+        <span class="highlight-tag">Small batch</span>
+        <h3>A2 Cow Ghee</h3>
+        <p>Slow-simmered the traditional bilona way, in copper vessels, from A2 cow milk only. One batch takes us the better part of a day.</p>
+        <span class="highlight-price">₹640 / 500ml</span>
+      </article>
+      <article class="highlight-card highlight-gold">
+        <span class="highlight-tag">Bestseller</span>
+        <h3>Farmhouse Paneer</h3>
+        <p>Cut fresh to order from the morning's curd. No stabilisers, so it's softer than what you'll find pre-packed — use it within three days.</p>
+        <span class="highlight-price">₹120 / 250g</span>
+      </article>
+      <article class="highlight-card highlight-brown">
+        <span class="highlight-tag">New this season</span>
+        <h3>Masala Chaas</h3>
+        <p>Our grandmother's spice mix, churned into buttermilk the same afternoon it's made. Nothing bottled, nothing kept for later.</p>
+        <span class="highlight-price">₹35 / 300ml</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT CATALOGUE ============ -->
+<section class="catalogue" id="products">
+  <div class="wrap">
+    <div class="catalogue-head">
+      <h2 class="section-title">The full range</h2>
+      <p class="section-sub">Everything below was made this week. Prices are per unit; bulk pricing is available on request.</p>
+    </div>
+    <div class="product-grid" id="productGrid"><!-- populated by script.js --></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-art" aria-hidden="true">
+      <svg viewBox="0 0 400 300" class="pasture-illustration">
+        <circle cx="330" cy="60" r="34" fill="#E8A33D"/>
+        <path d="M0 220 Q100 160 200 210 Q300 260 400 200 L400 300 L0 300Z" fill="#2F5233"/>
+        <path d="M0 240 Q100 190 200 230 Q300 270 400 220 L400 300 L0 300Z" fill="#3E6B45"/>
+        <ellipse cx="90" cy="252" rx="30" ry="18" fill="#FFFFFF" stroke="#1E2A1B" stroke-width="2.5"/>
+        <circle cx="66" cy="246" r="12" fill="#FFFFFF" stroke="#1E2A1B" stroke-width="2.5"/>
+        <circle cx="80" cy="255" r="4" fill="#1E2A1B"/>
+        <circle cx="100" cy="255" r="4" fill="#1E2A1B"/>
+        <ellipse cx="220" cy="258" rx="26" ry="16" fill="#F4F7EF" stroke="#1E2A1B" stroke-width="2.5"/>
+        <circle cx="200" cy="252" r="10" fill="#F4F7EF" stroke="#1E2A1B" stroke-width="2.5"/>
+      </svg>
+    </div>
+    <div class="about-copy">
+      <p class="hero-kicker">Our story</p>
+      <h2>Three generations, one gate.</h2>
+      <p>Whitegate Dairy Co. started as a six-cow homestead run by Chinna Reddy's grandfather. Today the herd has grown, but the gate at the entrance is still the same one — repainted, never replaced.</p>
+      <p>We sell what we make ourselves. No aggregating milk from other farms, no repackaging someone else's produce. If a product carries our name, one of our own animals is the reason it exists.</p>
+      <a href="#contact" class="btn btn-primary">Visit the farm</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter">
+  <svg class="drop drop-a" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 0C12 0 2 14 2 21a10 10 0 0 0 20 0C22 14 12 0 12 0Z"/></svg>
+  <svg class="drop drop-b" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 0C12 0 2 14 2 21a10 10 0 0 0 20 0C22 14 12 0 12 0Z"/></svg>
+  <svg class="drop drop-c" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 0C12 0 2 14 2 21a10 10 0 0 0 20 0C22 14 12 0 12 0Z"/></svg>
+  <div class="wrap newsletter-inner">
+    <div class="newsletter-copy">
+      <h2>Know what's fresh, before it sells out.</h2>
+      <p>One short email a week — what's in the morning batch, and when we're low on something you like.</p>
+    </div>
+    <form class="newsletter-form" id="newsletterForm" novalidate>
+      <div class="form-row">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+      </div>
+      <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="contact">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-name footer-brand-name">Whitegate Dairy Co.</span>
+      <p>Farm-fresh milk, ghee, paneer and more, from our own herd outside Kadapa, Andhra Pradesh.</p>
+      <div class="social-row">
+        <a href="#" class="social-icon" aria-label="Whitegate Dairy on Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Whitegate Dairy on Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 8h2V4h-2a5 5 0 0 0-5 5v2H8v4h2v6h4v-6h2.5l.5-4H14V9a1 1 0 0 1 1-1Z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Whitegate Dairy on WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 19l-4 1Z"/><path d="M8.5 9.5c.3 2 2 3.7 4 4"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Shop</h3>
+      <a href="#products">Milk &amp; curd</a>
+      <a href="#products">Ghee &amp; butter</a>
+      <a href="#products">Paneer &amp; cheese</a>
+      <a href="#highlights">This week's picks</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Company</h3>
+      <a href="#about">Our story</a>
+      <a href="#">Delivery areas</a>
+      <a href="#">Bulk orders</a>
+      <a href="#">Careers</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Get in touch</h3>
+      <a href="tel:+911234567890">+91 12345 67890</a>
+      <a href="mailto:hello@whitegatedairy.example">hello@whitegatedairy.example</a>
+      <p class="footer-address">Whitegate Farm, Kadapa,<br>Andhra Pradesh, India</p>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <p>&copy; <span id="year"></span> Whitegate Dairy Co. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms of service</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

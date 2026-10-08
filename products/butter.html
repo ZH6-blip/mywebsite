@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>White Butter</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="wrap header-inner">
+
+            <a href="../index.html" class="logo">
+                Whitegate Dairy Co.
+            </a>
+
+            <a href="../cart.html" class="cart-link">
+                Cart
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- Product Details -->
+    <section class="product-detail">
+
+        <div class="wrap product-detail-grid">
+
+            <!-- Product Image -->
+            <div>
+                <img
+                    src="../images/Butter.jpeg"
+                    alt="Traditional White Butter"
+                    class="product-detail-image"
+                >
+            </div>
+
+
+            <!-- Product Information -->
+            <div>
+
+                <h1>Traditional Butter</h1>
+
+                <p class="detail-price">
+                    ₹95 / 200g
+                </p>
+
+                <p>
+                    Freshly churned butter prepared using
+                    traditional methods. Rich taste and
+                    smooth texture.
+                </p>
+
+
+                <h3>Product Highlights</h3>
+
+                <ul>
+                    <li>Homestyle Preparation</li>
+                    <li>Rich Flavor</li>
+                    <li>Fresh Cream Base</li>
+                    <li>No Artificial Additives</li>
+                </ul>
+
+
+                <button
+                    class="btn btn-primary"
+                    onclick="addToCart()">
+                    Add To Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Add To Cart Script -->
+    <script>
+
+        function addToCart() {
+
+            let cart =
+                JSON.parse(
+                    localStorage.getItem("cart")
+                ) || [];
+
+
+            const product = {
+
+                id: 4,
+
+                name: "Butter",
+
+                description:
+                    "Traditional cultured butter.",
+
+                price: 95,
+
+                unit: "200g",
+
+                image: "../images/butter.jpg",
+
+                quantity: 1
+
+            };
+
+
+            const existing =
+                cart.find(
+                    item => item.id === 4
+                );
+
+
+            if (existing) {
+
+                existing.quantity++;
+
+            } else {
+
+                cart.push(product);
+
+            }
+
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+
+            alert("Butter added to cart");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

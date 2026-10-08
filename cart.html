@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Shopping Cart</title>
+
+<link rel="stylesheet"
+      href="style.css">
+
+<style>
+
+.cart-page{
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+.cart-item{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  background:white;
+  padding:20px;
+  margin-bottom:20px;
+  border-radius:12px;
+  box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.cart-item img{
+  width:100px;
+  height:100px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.cart-details{
+  flex:1;
+}
+
+.cart-total{
+  margin-top:30px;
+  font-size:24px;
+  font-weight:bold;
+}
+
+.remove-btn{
+  background:#e53935;
+  color:white;
+  border:none;
+  padding:10px 15px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.checkout-btn{
+  background:#2F5233;
+  color:white;
+  border:none;
+  padding:15px 30px;
+  border-radius:8px;
+  cursor:pointer;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="cart-page">
+
+<h1>Your Cart</h1>
+
+<div id="cartContainer">
+</div>
+
+<div id="cartTotal"
+     class="cart-total">
+</div>
+
+<button
+  class="checkout-btn"
+  onclick="proceedToPay()">
+  Proceed To Pay
+</button>
+
+</div>
+
+<script>
+
+function renderCart(){
+
+  const cart =
+    JSON.parse(
+      localStorage.getItem("cart")
+    ) || [];
+
+  const container =
+    document.getElementById(
+      "cartContainer"
+    );
+
+  const totalDiv =
+    document.getElementById(
+      "cartTotal"
+    );
+
+  container.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach(item => {
+
+    total +=
+      item.price * item.quantity;
+
+    container.innerHTML += `
+
+      <div class="cart-item">
+
+        <img src="${item.image}">
+
+        <div class="cart-details">
+
+          <h3>${item.name}</h3>
+
+          <p>
+           Price: ₹${item.price}
+          </p>
+
+          <p>
+           Quantity:
+           ${item.quantity}
+          </p>
+
+        </div>
+
+        <button
+          class="remove-btn"
+          onclick="removeItem(${item.id})">
+          Remove
+        </button>
+
+      </div>
+
+    `;
+  });
+
+  totalDiv.innerHTML =
+    `Total: ₹${total}`;
+}
+function proceedToPay(){
+
+    const cart =
+        JSON.parse(
+            localStorage.getItem("cart")
+        ) || [];
+
+    if(cart.length === 0){
+        alert("Your cart is empty.");
+        return;
+    }
+
+    const orderId =
+        "WD" +
+        Math.floor(
+            Math.random() * 100000
+        );
+
+    document.getElementById(
+        "orderId"
+    ).textContent = orderId;
+
+    document.getElementById(
+        "paymentModal"
+    ).style.display = "flex";
+
+    localStorage.removeItem("cart");
+}
+
+function goHome(){
+
+    window.location.href =
+        "index.html";
+}
+function removeItem(id){
+
+  let cart =
+    JSON.parse(
+      localStorage.getItem("cart")
+    ) || [];
+
+  cart =
+    cart.filter(
+      item => item.id !== id
+    );
+
+  localStorage.setItem(
+    "cart",
+    JSON.stringify(cart)
+  );
+
+  renderCart();
+}
+
+renderCart();
+
+function proceedToPay(){
+
+    const cart =
+        JSON.parse(
+            localStorage.getItem("cart")
+        ) || [];
+
+    if(cart.length === 0){
+        alert("Your cart is empty.");
+        return;
+    }
+
+    const orderId =
+        "WD" +
+        Math.floor(
+            Math.random() * 100000
+        );
+
+    document.getElementById(
+        "orderId"
+    ).textContent = orderId;
+
+    document.getElementById(
+        "paymentModal"
+    ).style.display = "flex";
+
+    localStorage.removeItem("cart");
+}
+
+function goHome(){
+
+    window.location.href =
+        "index.html";
+}
+
+</script>
+<div id="paymentModal" class="payment-modal">
+
+  <div class="payment-box">
+
+    <div class="success-icon">✓</div>
+
+    <h2>Payment Successful</h2>
+
+    <p>
+      Thank you for shopping with
+      Whitegate Dairy Co.
+    </p>
+
+    <p>
+      Order ID:
+      <strong id="orderId"></strong>
+    </p>
+
+    <button onclick="goHome()">
+      Continue Shopping
+    </button>
+
+  </div>
+
+</div>
+
+</body>
+</body>
+</html>

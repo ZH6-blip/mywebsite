@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Farmhouse Paneer</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="wrap header-inner">
+
+            <a href="../index.html" class="logo">
+                Whitegate Dairy Co.
+            </a>
+
+            <a href="../cart.html" class="cart-link">
+                Cart
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- Product Details -->
+    <section class="product-detail">
+
+        <div class="wrap product-detail-grid">
+
+            <!-- Product Image -->
+            <div>
+                <img
+                    src="../images/paneer.jpg"
+                    alt="Farmhouse Paneer"
+                    class="product-detail-image"
+                >
+            </div>
+
+
+            <!-- Product Information -->
+            <div>
+
+                <h1>Farmhouse Paneer</h1>
+
+                <p class="detail-price">
+                    ₹120 / 250g
+                </p>
+
+                <p>
+                    Soft and fresh paneer made daily using
+                    farm milk. Ideal for curries and snacks.
+                </p>
+
+
+                <h3>Product Highlights</h3>
+
+                <ul>
+                    <li>High Protein</li>
+                    <li>Fresh Daily</li>
+                    <li>Soft Texture</li>
+                    <li>No Preservatives</li>
+                </ul>
+
+
+                <button
+                    class="btn btn-primary"
+                    onclick="addToCart()">
+                    Add To Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Add To Cart Script -->
+    <script>
+
+        function addToCart() {
+
+            let cart =
+                JSON.parse(
+                    localStorage.getItem("cart")
+                ) || [];
+
+
+            const product = {
+
+                id: 3,
+
+                name: "Paneer",
+
+                description:
+                    "Soft farmhouse paneer.",
+
+                price: 120,
+
+                unit: "250g",
+
+                image: "../images/paneer.jpg",
+
+                quantity: 1
+
+            };
+
+
+            const existing =
+                cart.find(
+                    item => item.id === 3
+                );
+
+
+            if (existing) {
+
+                existing.quantity++;
+
+            } else {
+
+                cart.push(product);
+
+            }
+
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+
+            alert("Paneer added to cart");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fresh Curd</title>
+
+    <!-- Load CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <section class="product-detail">
+
+        <div class="wrap product-detail-grid">
+
+            <!-- Product Image -->
+            <div>
+                <img 
+                    src="../images/curd.jpg" 
+                    alt="Fresh Curd"
+                    class="product-detail-image"
+                >
+            </div>
+
+            <!-- Product Information -->
+            <div>
+
+                <h1>Fresh Curd</h1>
+
+                <p class="detail-price">
+                    ₹45 / 500g
+                </p>
+
+                <p>
+                    Rich and creamy curd prepared using fresh farm milk.
+                    Perfect for everyday meals.
+                </p>
+
+                <ul>
+                    <li>Thick Texture</li>
+                    <li>Natural Culture</li>
+                    <li>Freshly Made</li>
+                    <li>No Additives</li>
+                </ul>
+
+                <button 
+                    class="btn btn-primary"
+                    onclick="addToCart()">
+                    Add To Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        function addToCart() {
+
+            let cart =
+                JSON.parse(localStorage.getItem("cart")) || [];
+
+            const product = {
+                id: 2,
+                name: "Curd",
+                description: "Homemade thick curd.",
+                price: 45,
+                unit: "500g",
+                image: "../images/curd.jpg",
+                quantity: 1
+            };
+
+            const existing =
+                cart.find(item => item.id === 2);
+
+            if (existing) {
+
+                existing.quantity++;
+
+            } else {
+
+                cart.push(product);
+
+            }
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+            alert("Curd added to cart");
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Traditional Cheese | Whitegate Dairy Co.</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="wrap header-inner">
+
+            <a href="../index.html" class="logo">
+                Whitegate Dairy Co.
+            </a>
+
+            <a href="../cart.html" class="cart-link">
+                Cart
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- Product Details -->
+    <section class="product-detail">
+
+        <div class="wrap product-detail-grid">
+
+            <!-- Product Image -->
+            <div>
+                <img
+                    src="../images/cheese.jpg"
+                    alt="Traditional cheese"
+                    class="product-detail-image"
+                >
+            </div>
+
+
+            <!-- Product Information -->
+            <div>
+
+                <h1>cheese</h1>
+
+                <p class="detail-price">
+                    ₹180 / 200g
+                </p>
+
+                <p>
+                    Artisian Cheese made in small batches
+                </p>
+
+
+                <h3>Product Highlights</h3>
+
+                <ul>
+                    <li>Traditional Preparation</li>
+                    <li>Rich Flavor</li>
+                    <li>Fresh Cheese</li>
+                    <li>No Artificial Additives</li>
+                </ul>
+
+
+                <!-- Add To Cart -->
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="addToCart()">
+
+                    Add To Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Add To Cart Script -->
+    <script>
+
+        function addToCart() {
+
+            let cart =
+                JSON.parse(
+                    localStorage.getItem("cart")
+                ) || [];
+
+
+            // Butter product
+            const product = {
+
+                id: 4,
+
+                slug: "cheese",
+
+                name: "Cheese",
+
+                description:
+                    "Artisian Cheese",
+
+                price: 180,
+
+                unit: "200g",
+
+                image: "../images/cheese.jpg",
+
+                quantity: 1
+
+            };
+
+
+            // Check if Butter already exists
+            const existing =
+                cart.find(
+                    item => item.id === product.id
+                );
+
+
+            if (existing) {
+
+                existing.quantity++;
+
+            } else {
+
+                cart.push(product);
+
+            }
+
+
+            // Save cart
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+
+            // Confirmation
+            alert("Butter added to cart");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

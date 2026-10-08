@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A2 Cow Ghee | Whitegate Dairy Co.</title>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         HEADER
+    =============================== -->
+    <header class="site-header">
+
+        <div class="wrap header-inner">
+
+            <a href="../index.html" class="logo">
+                Whitegate Dairy Co.
+            </a>
+
+            <a href="../cart.html" class="cart-link">
+                Cart
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         PRODUCT DETAILS
+    =============================== -->
+    <main>
+
+        <section class="product-detail">
+
+            <div class="wrap product-detail-grid">
+
+                <!-- Product Image -->
+                <div class="product-image-container">
+
+                    <img
+                        src="../images/ghee.jpg"
+                        alt="A2 Cow Ghee"
+                        class="product-detail-image"
+                    >
+
+                </div>
+
+
+                <!-- Product Information -->
+                <div class="product-info">
+
+                    <h1>A2 Cow Ghee</h1>
+
+                    <p class="detail-price">
+                        ₹640 / 500ml
+                    </p>
+
+                    <p>
+                        Pure Bilona A2 cow ghee made traditionally
+                        from fresh cow milk. Rich in flavour and
+                        ideal for everyday cooking and traditional recipes.
+                    </p>
+
+
+                    <!-- Product Highlights -->
+                    <h3>Product Highlights</h3>
+
+                    <ul>
+                        <li>Bilona A2 Cow Ghee</li>
+                        <li>Traditional Preparation</li>
+                        <li>Rich Aroma & Flavour</li>
+                        <li>No Preservatives</li>
+                    </ul>
+
+
+                    <!-- Add To Cart Button -->
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        onclick="addToCart()">
+
+                        Add To Cart
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         CART SCRIPT
+    =============================== -->
+    <script>
+
+        function addToCart() {
+
+            // Get existing cart from localStorage
+            let cart =
+                JSON.parse(
+                    localStorage.getItem("cart")
+                ) || [];
+
+
+            // A2 Cow Ghee product
+            const product = {
+
+                id: 5,
+
+                slug: "ghee",
+
+                name: "A2 Cow Ghee",
+
+                description:
+                    "Bilona A2 cow ghee.",
+
+                price: 640,
+
+                unit: "500ml",
+
+                image: "../images/ghee.jpg",
+
+                quantity: 1
+
+            };
+
+
+            // Check if Ghee already exists
+            const existing =
+                cart.find(
+                    item => item.id === product.id
+                );
+
+
+            if (existing) {
+
+                // Increase quantity
+                existing.quantity++;
+
+            } else {
+
+                // Add Ghee to cart
+                cart.push(product);
+
+            }
+
+
+            // Save updated cart
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+
+            // Confirmation
+            alert("A2 Cow Ghee added to cart");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
